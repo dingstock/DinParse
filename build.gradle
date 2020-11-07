@@ -1,0 +1,46 @@
+buildscript {
+    ext.kotlin_version = "1.4.10"
+    ext.jit_authToken = 'jp_kef3pclenkl48gfr6hj5nmgq37'
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://jitpack.io"
+            credentials { username jit_authToken }
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:3.6.2"
+//        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.3"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:2.1"
+
+    }
+
+}
+
+plugins {
+    id "com.github.ben-manes.versions" version "0.28.0"
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://jitpack.io"
+            credentials { username jit_authToken }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 29
+
+    minSdkVersion = 14
+    targetSdkVersion = 29
+}

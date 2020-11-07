@@ -1,0 +1,3 @@
+include ':app'
+include ':parse', ':fcm', ':gcm', ':ktx', ':coroutines', 'rxjava', ':google', ':facebook', ':twitter', ':bolts-tasks'
+
